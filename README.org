@@ -1,0 +1,22 @@
+#+TITLE: README.org
+#+AUTHOR: Jeong Hoon Choi
+#+DATE: 2023.08.04
+
+** LICENSE
+
+󰿃 Copyright © 2023, *Jeong Hoon Choi* or *Sian*. All rights reserved
+
+To all individuals accessing this Emacs configuration files
+This is an important notice to infrom you that he files you are currently accessing contain
+confidential and personal information. These files were intended for private use only and should
+not be shared or disseminated without authorization.
+
+If, by any chance, you come across my personal files, documents or sensitive information
+that does not belong to you, I kindly request that *immediately cease your activities and refrain
+from sharing or distributing any content you may have encountered*.
+
+Your cooperation is greatly appreciated in maintaining the privacy and security of my personal
+information. If you inadvertently accessed any of my personal files or suspect that a leak has
+occured, please urgently contact *[[mailto:csian7386@gmail.com][me]]*.
+
+Thank you for your understanding and responsible handling of this matter.
