@@ -30,10 +30,10 @@
 
 (setq gc-cons-threshold (* 50 1000 1000))
 (add-hook 'emacs-startup-hook
-		  (lambda ()
-			(message "*** Emacs loaded in %s with %d garbage collections."
-					 (format "%.2f seconds" (float-time (time-subtract after-init-time before-init-time)))
-					 gcs-done)))
+					(lambda ()
+						(message "*** Emacs loaded in %s with %d garbage collections."
+										 (format "%.2f seconds" (float-time (time-subtract after-init-time before-init-time)))
+										 gcs-done)))
 
 (setq warning-minimum-level :emergency)
 (setq-default message-log-max nil)
@@ -41,9 +41,9 @@
 
 (setq initial-scratch-message
 			(concat ";;;\n"
-					"; Emacs *scratch* buffer\n"
-					"; Jeong Hoon Choi - Sian\n"
-					";;;\n\n"))
+							"; Emacs *scratch* buffer\n"
+							"; Jeong Hoon Choi - Sian\n"
+							";;;\n\n"))
 
 (setq image-types (cons 'svg image-types))
 
@@ -53,29 +53,29 @@
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-						 ("melpa-stable" . "https://stable.melpa.org/packages/")
-						 ("org" . "https://orgmode.org/elpa/")
-						 ("elpa" . "https://elpa.gnu.org/packages/")))
+												 ("melpa-stable" . "https://stable.melpa.org/packages/")
+												 ("org" . "https://orgmode.org/elpa/")
+												 ("elpa" . "https://elpa.gnu.org/packages/")))
 
 (package-initialize)
 
 (unless package-archive-contents
-    (package-refresh-contents))
+	(package-refresh-contents))
 
 (unless (package-installed-p 'use-package)
-    (package-install 'use-package))
+	(package-install 'use-package))
 
 (require 'use-package)
 (setq use-package-always-ensure t)
 
 (use-package auto-package-update
-  :custom
-    (auto-package-update-interval 7)
-    (auto-package-update-prompt-before-update t)
-    (auto-package-update-hide-results t)
-    :config
-    (auto-package-update-maybe)
-    (auto-package-update-at-time "22:00"))
+	:custom
+	(auto-package-update-interval 7)
+	(auto-package-update-prompt-before-update t)
+	(auto-package-update-hide-results t)
+	:config
+	(auto-package-update-maybe)
+	(auto-package-update-at-time "22:00"))
 
 (setq ns-pop-up-frames nil)
 
@@ -123,21 +123,21 @@
 
 (require 'openwith)
 (setq openwith-associations
-	  (list
-	   (list (openwith-make-extension-regexp
-			  '("mpg" "mpeg" "mp3" "mp4" "avi" "wmv"
-				"wav" "mov" "flv" "ogm" "ogg" "mkv"))
-			 "mpv"
-			 '(file))
-	   (list (openwith-make-extension-regexp
-			  '("xbm" "pbm" "pgm" "ppm" "pnm" "png"
-				"gif" "bmp" "tif" "jpeg"))
-			 "sxiv"
-			 '(file))
-	   (list (openwith-make-extension-regexp
-			  '("pdf"))
-			 "zathura"
-			 '(file))))
+			(list
+			 (list (openwith-make-extension-regexp
+							'("mpg" "mpeg" "mp3" "mp4" "avi" "wmv"
+							  "wav" "mov" "flv" "ogm" "ogg" "mkv"))
+						 "mpv"
+						  '(file))
+			 (list (openwith-make-extension-regexp
+						  '("xbm" "pbm" "pgm" "ppm" "pnm" "png"
+							  "gif" "bmp" "tif" "jpeg"))
+						 "sxiv"
+						  '(file))
+			 (list (openwith-make-extension-regexp
+						  '("pdf"))
+						 "zathura"
+						  '(file))))
 (openwith-mode 1)
 
 ;;; ENVIRONMENT
@@ -145,7 +145,7 @@
 ;; load custom.el
 (setq custom-file (expand-file-name "config/custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
-    (load custom-file))
+  (load custom-file))
 
 ;; windows
 (if (window-system)
